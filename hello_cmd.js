@@ -8,6 +8,7 @@ function foo1() {
 	var fs = require('fs');
  
 	var exec = require('child_process').exec;
+	const child_process = require('child_process');
 	var child;
 	var content_stdout;
 
@@ -20,8 +21,15 @@ function foo1() {
 			console.log('exec error: ' + error);
 		}
 	});
+	const cmd = 'pwd';
+	child_process.execSync(
+      cmd, 
+      {
+        stdio: [0, 1, 2]
+      });
+    content_stdout = child_process.execSync('pwd').toString();
 	//console.log("DEBUG>" +content_stdout);
-	return "content_stdout";
+	return content_stdout;
 }
 
 export function foo2() {
@@ -29,6 +37,7 @@ export function foo2() {
 	// or more concisely
 	//var sys = require('util')
 	var fs = require('fs');
+	const child_process = require('child_process');
  
 	var exec = require('child_process').exec;
 	function puts(error, stdout, stderr) { 
@@ -36,6 +45,7 @@ export function foo2() {
 		console.log(stdout);
 	 }
 	exec("ls -la", puts);
+	content_stdout = child_process.execSync('ls -la').toString();
 	//console.log("DEBUG>" +content_stdout);
-	return "content_stdout";
+	return content_stdout;
 }
