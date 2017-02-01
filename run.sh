@@ -1,2 +1,2 @@
 #!/bin/bash
-node hello_exec.ts
+node hello_cmd.js
