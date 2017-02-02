@@ -1,7 +1,7 @@
 
 // http://nodejs.org/api.html#_child_processes
 
-module.exports = { foo1: foo1, foo2: foo2 }
+module.exports = { Foo1: foo1, Foo2: foo2 }
 
 function foo1() {
 	//var sys = require('util')
